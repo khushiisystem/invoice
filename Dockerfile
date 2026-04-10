@@ -30,6 +30,9 @@ RUN npm ci --omit=dev && \
 # Copy built application from development stage
 COPY --from=development /app/dist ./dist
 
+# Copy .env file
+COPY .env ./
+
 # Expose port
 EXPOSE 3000
 
